@@ -7,6 +7,7 @@ int main(int argc, char *argv[]){
    std::cout << "Hello World!" << add(x1, x2) << std::endl;
 
    printSize();
+   printInfNan();
    
    return 0;
 }

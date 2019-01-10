@@ -21,3 +21,16 @@ void printSize()
 
     std::cout << "size_t (32 or 64 bits):\t" << sizeof(size_t) << " bytes" << std::endl;
 }
+
+void printInfNan()
+{
+    double zero = 0.0;
+    double posinf = 5.0 / zero; // positive infinity
+    std::cout << posinf << std::endl;
+
+    double neginf = -5.0 / zero; // negative infinity
+    std::cout << neginf << std::endl;
+
+    double nan = zero / zero; // not a number (mathematically invalid)
+    std::cout << nan << std::endl;
+}
