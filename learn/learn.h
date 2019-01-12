@@ -6,5 +6,6 @@ void printSize();
 void printInfNan();
 void printBool();
 void printChar();
+void printBitwise();
 
 #endif

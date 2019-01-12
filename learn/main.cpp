@@ -10,6 +10,7 @@ int main(int argc, char *argv[]){
   printInfNan();
   printBool();
   printChar();
+  printBitwise();
   
   return 0;
 }

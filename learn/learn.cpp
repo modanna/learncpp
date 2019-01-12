@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bitset>
 
 int add(int x, int y) {
   return x + y;
@@ -52,4 +53,56 @@ void printChar()
   std::cout << ch << std::endl;
   std::cout << static_cast<int>(ch) << std::endl;
   std::cout << ch << std::endl;
+}
+
+void printBitwise()
+{
+    // // C++14 Define 8 separate bit flags (these can represent whatever you want)
+    // const unsigned char option0 = 0b0000'0001; // represents bit 0
+    // const unsigned char option1 = 0b0000'0010; // represents bit 1
+    // const unsigned char option2 = 0b0000'0100; // represents bit 2 
+    // const unsigned char option3 = 0b0000'1000; // represents bit 3
+    // const unsigned char option4 = 0b0001'0000; // represents bit 4
+    // const unsigned char option5 = 0b0010'0000; // represents bit 5
+    // const unsigned char option6 = 0b0100'0000; // represents bit 6
+    // const unsigned char option7 = 0b1000'0000; // represents bit 7
+
+    // // C++11 Define 8 separate bit flags (these can represent whatever you want)
+    // const unsigned char option0 = 0x1; // hex for 0000 0001 
+    // const unsigned char option1 = 0x2; // hex for 0000 0010
+    // const unsigned char option2 = 0x4; // hex for 0000 0100
+    // const unsigned char option3 = 0x8; // hex for 0000 1000
+    // const unsigned char option4 = 0x10; // hex for 0001 0000
+    // const unsigned char option5 = 0x20; // hex for 0010 0000
+    // const unsigned char option6 = 0x40; // hex for 0100 0000
+    // const unsigned char option7 = 0x80; // hex for 1000 0000
+	
+    // // Define 8 separate bit flags (these can represent whatever you want)
+    // const unsigned char option0 = 1 << 0; // 0000 0001 
+    // const unsigned char option1 = 1 << 1; // 0000 0010
+    // const unsigned char option2 = 1 << 2; // 0000 0100
+    // const unsigned char option3 = 1 << 3; // 0000 1000
+    // const unsigned char option4 = 1 << 4; // 0001 0000
+    // const unsigned char option5 = 1 << 5; // 0010 0000
+    // const unsigned char option6 = 1 << 6; // 0100 0000
+    // const unsigned char option7 = 1 << 7; // 1000 0000
+
+    // Note that with std::bitset, our options correspond to bit indices, not bit patterns
+    const int option0 = 0;
+    const int option1 = 1;
+    const int option2 = 2;
+    const int option3 = 3;
+    const int option4 = 4;
+    const int option5 = 5;
+    const int option6 = 6;
+    const int option7 = 7;
+
+    std::bitset<8> bits(0x2); // we need 8 bits, start with bit pattern 0000 0010
+    bits.set(option4); // set bit 4 to 1 (now we have 0001 0010)
+    bits.flip(option5); // flip bit 5 (now we have 0011 0010)
+    bits.reset(option5); // set bit 5 back to 0 (now we have 0001 0010)
+ 
+    std::cout << "Bit 4 has value: " << bits.test(option4) << '\n';
+    std::cout << "Bit 5 has value: " << bits.test(option5) << '\n';
+    std::cout << "All the bits: " << bits << '\n';
 }
