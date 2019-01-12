@@ -7,5 +7,8 @@ void printInfNan();
 void printBool();
 void printChar();
 void printBitwise();
+int getRandomNumber();
+int getRandomNumber(int min, int max);
+int getRandom();
 
 #endif
