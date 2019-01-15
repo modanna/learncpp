@@ -3,6 +3,7 @@
 #include <cstdlib> // for std::rand() and std::srand()
 #include <ctime> // for std::time()
 #include <random> // for std::mt19937 //C++11
+#include <vector> // for std::vector
 
 int add(int x, int y) {
   return x + y;
@@ -145,4 +146,22 @@ int getRandom()
 	// }
   std::uniform_int_distribution<> die(1, 32767);
 	return die(mersenne);
+}
+
+void printVector()
+{
+  std::vector<int> myvector{ 1, 2, 3, 4, 5 };
+  myvector.push_back(6);
+  // Vector becomes 1, 2, 3, 4, 5, 6
+
+  for (auto it = myvector.begin(); it != myvector.end(); ++it)
+    std::cout << ' ' << *it;
+
+  // Note get N "4" and then next line "1 2 3 4" to A
+  // int N,i=0;
+  // cin>>N;
+  // int *A = new int[N];
+  // while(std::cin>>A[i++]);
+  // while(std::cout<<A[--N]<<' ' && N);
+  // delete[] A;
 }

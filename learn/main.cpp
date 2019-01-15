@@ -14,6 +14,7 @@ int main(int argc, char *argv[]){
   std::cout << getRandomNumber() << std::endl;
   std::cout << getRandomNumber(1, 6) << std::endl;
   std::cout << getRandom() << std::endl;
-
+  printVector();
+  
   return 0;
 }

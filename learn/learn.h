@@ -10,5 +10,6 @@ void printBitwise();
 int getRandomNumber();
 int getRandomNumber(int min, int max);
 int getRandom();
+void printVector();
 
 #endif
